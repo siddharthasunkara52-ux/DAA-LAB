@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<math.h>
+
+void movedisk(int scr,int dest)
+{
+    printf("Move disc from Tower %d to Tower %d\n ",scr,dest);
+}
+int main()
+{
+    int n;
+    printf("Enter no.of Discs:");
+    scanf("%d",&n);
+    int scr=1,aux=2,dest=3;
+
+   if (n % 2 == 0) {
+    int temp = dest;
+    dest = aux;
+    aux = temp;
+}
+
+    int moves=pow(2,n)-1;
+
+    for(int i=1;i<=moves;i++)
+    {
+        if(i%3==1)
+        {
+            movedisk(scr,dest);
+        }
+        else if(i%3==2)
+        {
+            movedisk(scr,aux);
+        }
+        else
+        {
+            movedisk(aux,dest);
+        }
+    }
+return 0;
+
+}
